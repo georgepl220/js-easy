@@ -2,7 +2,16 @@
 //  при цьому пропускаючи всі цифри.
 
 function reverseWithoutNumbers(str) {
-  // Ваш код тут
+  let charsWithoutNumbers = [];
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (isNaN(parseInt(char))) {
+      charsWithoutNumbers.push(char);
+    }
+  }
+
+  return charsWithoutNumbers.reverse().join('');
 }
 
 console.log(reverseWithoutNumbers("hello123world456")); // Виведе: "dlrowolleh"
